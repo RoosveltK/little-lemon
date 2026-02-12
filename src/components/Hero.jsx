@@ -1,5 +1,5 @@
 import React from 'react'
-import heroImage from '../assets/restauranfood.jpg'
+import heroImage from '../assets/icons_assets/restauranfood.jpg'
 
 function Hero() {
     return (

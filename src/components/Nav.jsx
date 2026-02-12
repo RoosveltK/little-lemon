@@ -3,7 +3,7 @@ import React from 'react'
 function Nav() {
   return (
     <nav>
-      <ul className='flex gap-8 font-karla font-bold text-lg'>
+      <ul className='flex gap-8 font-karla font-bold'>
         <li><a href="#" className="hover:text-primary-yellow transition-colors">Home</a></li>
         <li><a href="#" className="hover:text-primary-yellow transition-colors">About</a></li>
         <li><a href="#" className="hover:text-primary-yellow transition-colors">Menu</a></li>

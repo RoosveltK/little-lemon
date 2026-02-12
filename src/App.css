@@ -1,3 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme{
+    --color-primary-green: oklch(40.2% 0.011 151.9);
+    --color-primary-yellow: oklch(87.9% 0.215 96.1);
+    --color-secondary-orange: oklch(73.4% 0.188 42.3);
+    --color-secondary-peach: oklch(93.7% 0.141 105.3);
+    --color-highlight-gray: oklch(94.1% 0.004 264.7);
+    --color-highlight-dark: oklch(20.8% 0.005 264.7);
+    --font-markazi: "Markazi Text", serif;
+    --font-karla: "Karla", sans-serif;
+}
