@@ -2,7 +2,7 @@ import React from 'react';
 import BookingForm from '../components/BookingForm';
 import BookingSlot from '../components/BookingSlot';
 
-function Booking({ availableTimes, dispatch }) {
+function Booking({ availableTimes, dispatch, submitForm }) {
     return (
         <div className='max-w-screen-xl mx-auto p-4 py-16' style={{ minHeight: 'calc(100vh - 4rem)' }}>
             <h1 className='font-markazi text-5xl text-primary-yellow font-medium mb-8'>Reserve a Table</h1>
@@ -21,7 +21,7 @@ function Booking({ availableTimes, dispatch }) {
                     <p className='font-karla text-xl mb-6 text-highlight-dark'>
                         Fill out the form below to secure your spot at Little Lemon. We look forward to serving you!
                     </p>
-                    <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
+                    <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />
                 </div>
                 <div className="flex-1 hidden md:block">
                     <div className="bg-primary-green text-white p-8 rounded-lg shadow-xl">

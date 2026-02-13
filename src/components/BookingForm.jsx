@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
-/* global submitAPI */
-
-const BookingForm = ({ availableTimes, dispatch }) => {
+const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
     const [formData, setFormData] = useState({
         date: '',
         time: '',
@@ -25,15 +23,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Reservation Submitted:', formData);
-
-        // submitAPI is defined in the global scope via index.html script tag
-        const success = typeof submitAPI !== 'undefined' ? submitAPI(formData) : true;
-
-        if (success) {
-            alert('Reservation submitted successfully!');
-        } else {
-            alert('Failed to submit reservation. Please try again.');
-        }
+        submitForm(formData);
     };
 
     return (
