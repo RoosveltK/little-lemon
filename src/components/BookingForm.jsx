@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+/* global submitAPI */
+
 const BookingForm = ({ availableTimes, dispatch }) => {
     const [formData, setFormData] = useState({
         date: '',
@@ -23,7 +25,15 @@ const BookingForm = ({ availableTimes, dispatch }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Reservation Submitted:', formData);
-        alert('Reservation submitted successfully!');
+
+        // submitAPI is defined in the global scope via index.html script tag
+        const success = typeof submitAPI !== 'undefined' ? submitAPI(formData) : true;
+
+        if (success) {
+            alert('Reservation submitted successfully!');
+        } else {
+            alert('Failed to submit reservation. Please try again.');
+        }
     };
 
     return (
@@ -39,7 +49,6 @@ const BookingForm = ({ availableTimes, dispatch }) => {
                     id="res-date"
                     name="date"
                     value={formData.date}
-                    onBlur={handleInputChange} // User might prefer onChange, but instruction says "lorsque le champ du formulaire de date est modifié"
                     onChange={handleInputChange}
                     required
                     className="p-3 border border-highlight-gray rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green bg-white shadow-sm"

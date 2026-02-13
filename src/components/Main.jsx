@@ -3,8 +3,12 @@ import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Booking from '../pages/Booking';
 
+/* global fetchAPI */
+
 export const initializeTimes = () => {
-  return [
+  const today = new Date();
+  // fetchAPI is defined in the global scope via index.html script tag
+  return typeof fetchAPI !== 'undefined' ? fetchAPI(today) : [
     "17:00",
     "18:00",
     "19:00",
@@ -17,8 +21,8 @@ export const initializeTimes = () => {
 export const updateTimes = (state, action) => {
   switch (action.type) {
     case 'UPDATE_TIMES':
-      // For now, return the same times regardless of date
-      return initializeTimes();
+      const selectedDate = new Date(action.date);
+      return typeof fetchAPI !== 'undefined' ? fetchAPI(selectedDate) : state;
     default:
       return state;
   }
