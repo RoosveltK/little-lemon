@@ -1,10 +1,21 @@
 import React from 'react';
 import BookingForm from '../components/BookingForm';
+import BookingSlot from '../components/BookingSlot';
 
 function Booking({ availableTimes, dispatch }) {
     return (
         <div className='max-w-screen-xl mx-auto p-4 py-16' style={{ minHeight: 'calc(100vh - 4rem)' }}>
             <h1 className='font-markazi text-5xl text-primary-yellow font-medium mb-8'>Reserve a Table</h1>
+
+            <div className="mb-12">
+                <h2 className="font-markazi text-3xl text-primary-green mb-4">Available Slots</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+                    {availableTimes.map((time) => (
+                        <BookingSlot key={time} time={time} />
+                    ))}
+                </div>
+            </div>
+
             <div className="flex flex-col md:flex-row gap-12">
                 <div className="flex-1">
                     <p className='font-karla text-xl mb-6 text-highlight-dark'>
