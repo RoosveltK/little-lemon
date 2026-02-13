@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/icons_assets/Logo .svg' // Note the space in filename "Logo .svg" vs "Logo.svg" in header. checking file list... "Logo .svg" exists.
+import logo from '../assets/icons_assets/Logo.svg' // Note the space in filename "Logo .svg" vs "Logo.svg" in header. checking file list... "Logo .svg" exists.
 
 function Footer() {
   return (
@@ -12,11 +12,7 @@ function Footer() {
           <h3 className='font-karla font-bold text-xl mb-4 text-primary-yellow'>Doormat Navigation</h3>
           <ul className='space-y-2 font-karla'>
             <li><a href="#" className="hover:text-primary-yellow">Home</a></li>
-            <li><a href="#" className="hover:text-primary-yellow">About</a></li>
-            <li><a href="#" className="hover:text-primary-yellow">Menu</a></li>
             <li><a href="#" className="hover:text-primary-yellow">Reservations</a></li>
-            <li><a href="#" className="hover:text-primary-yellow">Order Online</a></li>
-            <li><a href="#" className="hover:text-primary-yellow">Login</a></li>
           </ul>
         </div>
         <div>
