@@ -26,6 +26,16 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
         submitForm(formData);
     };
 
+    const getIsFormValid = () => {
+        return (
+            formData.date &&
+            formData.time &&
+            formData.guests >= 1 &&
+            formData.guests <= 10 &&
+            formData.occasion
+        );
+    };
+
     return (
         <form
             className="grid max-w-[400px] gap-5 font-karla text-highlight-dark"
@@ -97,7 +107,11 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
 
             <button
                 type="submit"
-                className="mt-4 bg-primary-yellow text-highlight-dark font-bold py-3 px-6 rounded-md hover:bg-[#eac400] transition-colors shadow-md text-lg"
+                disabled={!getIsFormValid()}
+                className={`mt-4 font-bold py-3 px-6 rounded-md shadow-md text-lg transition-colors ${getIsFormValid()
+                        ? "bg-primary-yellow text-highlight-dark hover:bg-[#eac400]"
+                        : "bg-highlight-gray text-gray-500 cursor-not-allowed opacity-50"
+                    }`}
                 aria-label="Click to submit reservation"
             >
                 Make Your Reservation
