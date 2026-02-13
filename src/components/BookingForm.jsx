@@ -51,6 +51,7 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
                     value={formData.date}
                     onChange={handleInputChange}
                     required
+                    aria-required="true"
                     className="p-3 border border-highlight-gray rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green bg-white shadow-sm"
                 />
             </div>
@@ -63,6 +64,7 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
                     value={formData.time}
                     onChange={handleInputChange}
                     required
+                    aria-required="true"
                     className="p-3 border border-highlight-gray rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green bg-white shadow-sm"
                 >
                     <option value="">Select a time</option>
@@ -84,6 +86,7 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
                     value={formData.guests}
                     onChange={handleInputChange}
                     required
+                    aria-required="true"
                     className="p-3 border border-highlight-gray rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green bg-white shadow-sm"
                 />
             </div>
@@ -109,10 +112,10 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
                 type="submit"
                 disabled={!getIsFormValid()}
                 className={`mt-4 font-bold py-3 px-6 rounded-md shadow-md text-lg transition-colors ${getIsFormValid()
-                        ? "bg-primary-yellow text-highlight-dark hover:bg-[#eac400]"
-                        : "bg-highlight-gray text-gray-500 cursor-not-allowed opacity-50"
+                    ? "bg-primary-yellow text-highlight-dark hover:bg-[#eac400]"
+                    : "bg-highlight-gray text-gray-500 cursor-not-allowed opacity-50"
                     }`}
-                aria-label="Click to submit reservation"
+                aria-label="On Click"
             >
                 Make Your Reservation
             </button>

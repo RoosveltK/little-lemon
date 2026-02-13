@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
-    <nav>
+    <nav aria-label="Main Navigation">
       <ul className='flex gap-8 font-karla font-bold'>
         <li><Link to="/" className="hover:text-primary-yellow transition-colors">Home</Link></li>
         <li><Link to="/booking" className="hover:text-primary-yellow transition-colors">Reservations</Link></li>
